@@ -33,12 +33,12 @@ const Navbar = () => {
       <div className="container mx-auto px-4 flex items-center justify-between">
         <div className="flex items-center space-x-2">
           <img 
-            src="/lovable-uploads/9dde4912-2dca-4020-94bb-a48921ea1388.png" 
+            src="/lovable-uploads/04af4392-04cd-4399-b70a-26857944c11a.png" 
             alt="InfinityHQ Logo" 
             className="w-12 h-12 object-contain"
           />
           <span className={`text-2xl font-bold ${isScrolled ? 'text-minecraft-dark' : 'text-white'}`}>
-            Infinity<span className="text-purple-600">HQ</span>
+            <span className="text-blue-600">Infinity</span><span className="text-purple-600">HQ</span>
           </span>
         </div>
         

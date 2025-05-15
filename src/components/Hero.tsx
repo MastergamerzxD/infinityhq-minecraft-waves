@@ -41,7 +41,9 @@ const Hero = () => {
               Premium <span className="text-gradient">Minecraft</span> Hosting in India
             </h1>
             <p className="text-lg mb-8 text-gray-600 max-w-lg mx-auto lg:mx-0 opacity-0 animate-fade-in" style={{ animationDelay: '0.6s' }}>
-              Experience lag-free gaming with InfinityHQ's high-performance Minecraft servers based in Mumbai. Built by gamers, for gamers.
+              Experience lag-free gaming with <span className="text-white font-medium">
+                <span className="text-blue-600">Infinity</span><span className="text-purple-600">HQ</span>
+              </span>'s high-performance Minecraft servers based in Mumbai. Built by gamers, for gamers.
             </p>
             <div className="flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4 opacity-0 animate-fade-in" style={{ animationDelay: '0.9s' }}>
               <Button 
