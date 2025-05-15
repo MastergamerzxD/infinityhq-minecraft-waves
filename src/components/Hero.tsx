@@ -44,8 +44,19 @@ const Hero = () => {
               Experience lag-free gaming with InfinityHQ's high-performance Minecraft servers based in Mumbai. Built by gamers, for gamers.
             </p>
             <div className="flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4 opacity-0 animate-fade-in" style={{ animationDelay: '0.9s' }}>
-              <Button className="minecraft-btn text-lg px-8 py-6">Get Your Server</Button>
-              <Button variant="outline" className="text-lg px-8 py-6 border-2 hover:bg-minecraft-green/10">Learn More</Button>
+              <Button 
+                className="minecraft-btn text-lg px-8 py-6"
+                onClick={() => window.open("https://billing.infinityhq.shop/index.php?rp=/store/panel", "_blank")}
+              >
+                Get Your Server
+              </Button>
+              <Button 
+                variant="outline" 
+                className="text-lg px-8 py-6 border-2 hover:bg-minecraft-green/10"
+                onClick={() => window.open("https://dsc.gg/ihq", "_blank")}
+              >
+                Discord
+              </Button>
             </div>
             
             <div className="flex justify-center lg:justify-start mt-12 space-x-8 opacity-0 animate-fade-in" style={{ animationDelay: '1.2s' }}>

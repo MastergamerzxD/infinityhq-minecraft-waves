@@ -32,9 +32,13 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <div className="flex items-center space-x-2">
-          <div className="w-10 h-10 bg-minecraft-green rounded-sm minecraft-block animate-bob"></div>
+          <img 
+            src="/lovable-uploads/9dde4912-2dca-4020-94bb-a48921ea1388.png" 
+            alt="InfinityHQ Logo" 
+            className="w-12 h-12 object-contain"
+          />
           <span className={`text-2xl font-bold ${isScrolled ? 'text-minecraft-dark' : 'text-white'}`}>
-            Infinity<span className="text-minecraft-green">HQ</span>
+            Infinity<span className="text-purple-600">HQ</span>
           </span>
         </div>
         
@@ -43,7 +47,12 @@ const Navbar = () => {
         </div>
         
         <div className="hidden md:block">
-          <Button className="minecraft-btn">Get Started</Button>
+          <Button 
+            className="minecraft-btn"
+            onClick={() => window.open("https://billing.infinityhq.shop/index.php?rp=/store/panel", "_blank")}
+          >
+            Get Started
+          </Button>
         </div>
         
         <button 
@@ -59,7 +68,12 @@ const Navbar = () => {
         <div className="md:hidden bg-white shadow-lg animate-fade-in">
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
             <NavLinks isScrolled={true} mobile={true} />
-            <Button className="minecraft-btn w-full">Get Started</Button>
+            <Button 
+              className="minecraft-btn w-full"
+              onClick={() => window.open("https://billing.infinityhq.shop/index.php?rp=/store/panel", "_blank")}
+            >
+              Get Started
+            </Button>
           </div>
         </div>
       )}
@@ -82,7 +96,6 @@ const NavLinks = ({ isScrolled, mobile = false }: { isScrolled: boolean; mobile?
       <a href="#features" className={linkStyle}>Features</a>
       <a href="#pricing" className={linkStyle}>Pricing</a>
       <a href="#testimonials" className={linkStyle}>Testimonials</a>
-      <a href="#contact" className={linkStyle}>Contact</a>
     </div>
   );
 };

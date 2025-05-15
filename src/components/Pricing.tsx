@@ -1,6 +1,6 @@
 
 import { Button } from '@/components/ui/button';
-import { CheckIcon } from 'lucide-react';
+import { CheckIcon, XIcon } from 'lucide-react';
 import { useEffect } from 'react';
 
 const Pricing = () => {
@@ -26,56 +26,191 @@ const Pricing = () => {
   
   const plans = [
     {
-      name: "Starter",
-      ram: "2GB",
-      players: "10-20",
-      price: "₹499",
+      name: "Ryzen 2GB",
+      price: "₹199.00",
       popular: false,
       features: [
-        "2GB RAM",
-        "1 vCPU Core",
-        "20GB NVMe Storage",
-        "10-20 Players",
-        "Mumbai Location",
-        "DDoS Protection",
-        "24/7 Support"
+        {
+          name: "CPU: AMD EPYC 9354P (100%)",
+          included: true
+        },
+        {
+          name: "RAM: 2GB DDR5",
+          included: true
+        },
+        {
+          name: "Storage: 5GB NVMe SSD",
+          included: true
+        },
+        {
+          name: "DDoS Protection",
+          included: false
+        },
+        {
+          name: "Free Panel",
+          included: true
+        },
+        {
+          name: "Backups",
+          included: false,
+          suffix: " + ₹50"
+        }
       ]
     },
     {
-      name: "Popular",
-      ram: "4GB",
-      players: "20-40",
-      price: "₹899",
+      name: "Ryzen 4GB",
+      price: "₹499.00",
       popular: true,
       features: [
-        "4GB RAM",
-        "2 vCPU Cores",
-        "50GB NVMe Storage",
-        "20-40 Players",
-        "Mumbai Location",
-        "DDoS Protection",
-        "Plugin Support",
-        "Daily Backups",
-        "24/7 Support"
+        {
+          name: "CPU: AMD EPYC 9354P (100%)",
+          included: true
+        },
+        {
+          name: "RAM: 4GB DDR5",
+          included: true
+        },
+        {
+          name: "Storage: 10GB NVMe SSD",
+          included: true
+        },
+        {
+          name: "DDoS Protection",
+          included: false
+        },
+        {
+          name: "Free Panel",
+          included: true
+        },
+        {
+          name: "Backups",
+          included: false,
+          suffix: " + ₹50"
+        }
       ]
     },
     {
-      name: "Premium",
-      ram: "8GB",
-      players: "40-80",
-      price: "₹1699",
+      name: "Ryzen 6GB",
+      price: "₹699.00",
       popular: false,
       features: [
-        "8GB RAM",
-        "4 vCPU Cores",
-        "100GB NVMe Storage",
-        "40-80 Players",
-        "Mumbai Location",
-        "DDoS Protection",
-        "Plugin Support",
-        "Hourly Backups",
-        "Priority Support",
-        "Custom Domain"
+        {
+          name: "CPU: AMD EPYC 9354P (150%)",
+          included: true
+        },
+        {
+          name: "RAM: 6GB DDR5",
+          included: true
+        },
+        {
+          name: "Storage: 15GB NVMe SSD",
+          included: true
+        },
+        {
+          name: "DDoS Protection",
+          included: false
+        },
+        {
+          name: "Free Panel",
+          included: true
+        },
+        {
+          name: "Backups",
+          included: true
+        }
+      ]
+    },
+    {
+      name: "Ryzen 8GB",
+      price: "₹799.00",
+      popular: false,
+      features: [
+        {
+          name: "CPU: AMD EPYC 9354P (200%)",
+          included: true
+        },
+        {
+          name: "RAM: 8GB DDR5",
+          included: true
+        },
+        {
+          name: "Storage: 15GB NVMe SSD",
+          included: true
+        },
+        {
+          name: "DDoS Protection",
+          included: true
+        },
+        {
+          name: "Free Panel",
+          included: true
+        },
+        {
+          name: "Backups",
+          included: true
+        }
+      ]
+    },
+    {
+      name: "Ryzen 12GB",
+      price: "₹1,299.00",
+      popular: false,
+      features: [
+        {
+          name: "CPU: AMD EPYC 9354P (300%)",
+          included: true
+        },
+        {
+          name: "RAM: 12GB DDR5",
+          included: true
+        },
+        {
+          name: "Storage: 15GB NVMe SSD",
+          included: true
+        },
+        {
+          name: "DDoS Protection",
+          included: true
+        },
+        {
+          name: "Free Panel",
+          included: true
+        },
+        {
+          name: "Backups",
+          included: true
+        }
+      ]
+    },
+    {
+      name: "Ryzen 16GB",
+      price: "₹1,799.00",
+      popular: false,
+      features: [
+        {
+          name: "CPU: AMD EPYC 9354P (450%)",
+          included: true
+        },
+        {
+          name: "RAM: 16GB DDR5",
+          included: true
+        },
+        {
+          name: "Storage: 15GB NVMe SSD",
+          included: true
+        },
+        {
+          name: "DDoS Protection",
+          included: true
+        },
+        {
+          name: "Free Panel",
+          included: true
+        },
+        {
+          name: "Backups",
+          included: true
+        }
       ]
     }
   ];
@@ -92,52 +227,51 @@ const Pricing = () => {
           </p>
         </div>
         
-        <div className="flex flex-wrap justify-center gap-8">
+        <div className="flex flex-wrap justify-center gap-6">
           {plans.map((plan, index) => (
             <div 
               key={index}
-              className={`w-full md:w-72 rounded-xl overflow-hidden animate-on-scroll ${
+              className={`w-full md:w-[280px] rounded-xl overflow-hidden animate-on-scroll ${
                 plan.popular 
-                  ? 'border-4 border-minecraft-green relative transform md:scale-110 shadow-xl' 
+                  ? 'border-4 border-purple-600 relative transform md:scale-105 shadow-xl' 
                   : 'border border-gray-200 shadow-md'
               }`}
-              style={{ transitionDelay: `${0.2 * index}s` }}
+              style={{ transitionDelay: `${0.1 * index}s` }}
             >
               {plan.popular && (
-                <div className="bg-minecraft-green text-white py-1 px-3 text-sm font-semibold absolute top-0 right-0 rounded-bl-lg">
+                <div className="bg-purple-600 text-white py-1 px-3 text-sm font-semibold absolute top-0 right-0 rounded-bl-lg">
                   MOST POPULAR
                 </div>
               )}
               
-              <div className="bg-white p-6">
-                <h3 className="text-2xl font-bold text-center mb-2">{plan.name}</h3>
-                <div className="flex justify-center items-baseline my-4">
-                  <span className="text-4xl font-extrabold">{plan.price}</span>
+              <div className="bg-white p-5">
+                <h3 className="text-xl font-bold text-center mb-2">{plan.name}</h3>
+                <div className="flex justify-center items-baseline my-3">
+                  <span className="text-3xl font-extrabold">{plan.price}</span>
                   <span className="text-gray-500 ml-1">/month</span>
                 </div>
                 
-                <div className="flex justify-center gap-4 mb-6">
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-minecraft-green">{plan.ram}</div>
-                    <div className="text-xs text-gray-500">RAM</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-minecraft-green">{plan.players}</div>
-                    <div className="text-xs text-gray-500">PLAYERS</div>
-                  </div>
-                </div>
-                
-                <Button className={`w-full minecraft-btn ${plan.popular ? 'bg-minecraft-green' : ''}`}>
+                <Button 
+                  className={`w-full minecraft-btn ${plan.popular ? 'bg-purple-600 hover:bg-purple-700' : ''}`}
+                  onClick={() => window.open("https://billing.infinityhq.shop/index.php?rp=/store/panel", "_blank")}
+                >
                   Get Started
                 </Button>
               </div>
               
-              <div className="bg-gray-50 p-6">
+              <div className="bg-gray-50 p-5">
                 <ul className="space-y-3">
                   {plan.features.map((feature, i) => (
                     <li key={i} className="flex items-start">
-                      <CheckIcon className="h-5 w-5 text-minecraft-green flex-shrink-0 mr-2" />
-                      <span className="text-sm">{feature}</span>
+                      {feature.included ? (
+                        <CheckIcon className="h-5 w-5 text-green-500 flex-shrink-0 mr-2 mt-0.5" />
+                      ) : (
+                        <XIcon className="h-5 w-5 text-red-500 flex-shrink-0 mr-2 mt-0.5" />
+                      )}
+                      <span className="text-sm">
+                        {feature.name}
+                        {feature.suffix && <span className="text-gray-500">{feature.suffix}</span>}
+                      </span>
                     </li>
                   ))}
                 </ul>
