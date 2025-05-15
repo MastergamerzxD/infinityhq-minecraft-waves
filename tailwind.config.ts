@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -52,6 +53,14 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				minecraft: {
+					'green': '#59C173',
+					'dark-green': '#2C784C',
+					'light-green': '#8BE0A6',
+					'earth': '#8B5E34',
+					'stone': '#7D7D7D',
+					'dark': '#1F1F1F'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -84,11 +93,58 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': { opacity: '0', transform: 'translateY(10px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
+				},
+				'fade-out': {
+					'0%': { opacity: '1', transform: 'translateY(0)' },
+					'100%': { opacity: '0', transform: 'translateY(10px)' }
+				},
+				'scale-in': {
+					'0%': { transform: 'scale(0.95)', opacity: '0' },
+					'100%': { transform: 'scale(1)', opacity: '1' }
+				},
+				'scale-out': {
+					from: { transform: 'scale(1)', opacity: '1' },
+					to: { transform: 'scale(0.95)', opacity: '0' }
+				},
+				'slide-in': {
+					'0%': { transform: 'translateX(-100%)' },
+					'100%': { transform: 'translateX(0)' }
+				},
+				'slide-out': {
+					'0%': { transform: 'translateX(0)' },
+					'100%': { transform: 'translateX(-100%)' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				'bob': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(5px)' }
+				},
+				'minecraft-block': {
+					'0%': { transform: 'translateY(0) rotate(0deg)' },
+					'25%': { transform: 'translateY(-5px) rotate(1deg)' },
+					'75%': { transform: 'translateY(5px) rotate(-1deg)' },
+					'100%': { transform: 'translateY(0) rotate(0deg)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.5s ease-out forwards',
+				'fade-out': 'fade-out 0.5s ease-out forwards',
+				'scale-in': 'scale-in 0.3s ease-out forwards',
+				'scale-out': 'scale-out 0.3s ease-out forwards',
+				'slide-in': 'slide-in 0.5s ease-out forwards',
+				'slide-out': 'slide-out 0.5s ease-out forwards',
+				'float': 'float 3s ease-in-out infinite',
+				'bob': 'bob 2s ease-in-out infinite',
+				'minecraft-block': 'minecraft-block 8s ease-in-out infinite',
 			}
 		}
 	},
